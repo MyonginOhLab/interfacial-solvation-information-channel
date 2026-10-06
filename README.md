@@ -21,9 +21,9 @@ The `H2O/` directory contains input structures for six surface charge densities:
 - `pos010`: +0.10 C/m²
 - `pos020`: +0.20 C/m²
 
-Each charge-state directory contains the relevant structure, topology, constraint, and restart files used for production simulations.
+Each charge state directory contains the relevant structure, topology, constraint, and restart files used for production simulations.
 
-The `toppar/` directory contains the topology and parameter files required for the NAMD simulations, and `eq_production.conf` contains the NAMD configuration used for equilibration and production simulations.
+The `toppar/` directory contains the parameter files required for the NAMD simulations, and `eq_production.conf` contains the NAMD configuration used for production simulations.
 
 Because of repository size limitations, the complete simulation input sets and trajectories for all solvent systems are not included here. The graphene-water systems are provided as representative examples of the simulation setup used throughout the study.
 
@@ -32,10 +32,10 @@ Because of repository size limitations, the complete simulation input sets and t
 This directory contains representative Tcl analysis scripts for the water systems:
 
 - `analysis_number_density_water.tcl`  
-  Calculates solvent number-density profiles as a function of distance from the graphene surface.
+  Calculates solvent number density profiles as a function of distance from the graphene surface.
 
 - `analysis_interfacial_orientation_distribution_water.tcl`  
-  Calculates the orientational distribution of interfacial water molecules.
+  Calculates the conditional orientational distribution of interfacial water molecules.
 
 - `analysis_interfacial_dipole_moment_water.tcl`  
   Calculates molecular dipole moments of interfacial water molecules.
@@ -63,21 +63,17 @@ These scripts reproduce the plotting and visualization procedures used for the c
 
 ## Note
 
-The complete molecular dynamics trajectories are not included in this repository because of their large file sizes.
+* The complete molecular dynamics trajectories are not included in this repository because of their large file sizes.
 
-Similarly, the complete simulation input and trajectory data sets for all six solvents are not archived here. Representative simulation inputs and analysis scripts are provided to document the computational workflow used in the study.
+* Similarly, the complete simulation input and trajectory data sets for all six solvents are not archived here. Representative simulation inputs and analysis scripts are provided to document the computational workflow used in the study.
 
-Mutual information and information retention calculations were performed using spreadsheet-based calculations from the processed orientational probability distributions. The corresponding numerical values reported in the manuscript are used by the Julia scripts where applicable.
+* Mutual information and information retention calculations were performed using Excel spreadsheet-based calculations from the processed orientational probability distributions. The corresponding numerical values reported in the manuscript are used by the Julia scripts to generate figures.
 
 ## Software
 
-Molecular dynamics simulations were performed using:
+* Molecular dynamics simulations were performed using NAMD 2.14 with the CHARMM36m force field.
 
-- NAMD 2.14
-- CHARMM36m/CHARMM force-field parameters
-- VMD 1.9.3
-
-Trajectory analysis was performed primarily using Tcl scripts in VMD. Figure generation and additional data processing were performed using Julia.
+* Trajectory analysis was performed primarily using Tcl scripts in VMD 1.9.3. Figure generation was performed using Julia.
 
 ## Contact
 
